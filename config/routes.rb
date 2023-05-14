@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1 do
-      resources :user, only: [:index, :create] do
-      resources :reservations, only: [:index, :create, :destroy, :show]
-    end
-  end
-end
- 
+  get 'reservations/index'
+  get 'reservations/create'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
