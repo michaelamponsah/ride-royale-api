@@ -23,3 +23,5 @@ end
     end
   end
 end
+
+# post 'login', to: 'authentication#login'
