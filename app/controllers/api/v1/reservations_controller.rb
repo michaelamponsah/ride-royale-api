@@ -33,7 +33,6 @@ class Api::V1::ReservationsController < ApplicationController
     render json: { reservations: @result }, status: :ok
   end
 
-
   private
 
   def reservation_params
