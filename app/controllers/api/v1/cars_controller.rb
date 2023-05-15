@@ -1,4 +1,4 @@
-class Api::V1::CarController < ApplicationController
+class Api::V1::CarsController < ApplicationController
   def index
     render json: { cars: Car.all }, status: :ok
   end
