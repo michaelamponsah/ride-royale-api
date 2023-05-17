@@ -1,19 +1,15 @@
 Rails.application.routes.draw do
+  devise_for :users, defaults: { format: :json }, controllers: { sessions: 'api/v1/sessions' }
+
   namespace :api do
     namespace :v1 do
-      
-      resources :user, only: [:index, :create] do
-      resources :reservations, only: [:index, :create, :destroy, :show]
+      resources :users, only: [:index, :create] do
+        resources :reservations, only: [:index, :create, :destroy, :show]
+      end
     end
   end
-end
- 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-
-  #cars end point
+  #Car resource  endpoint
   namespace :api do
     namespace :v1 do
       resources :cars do
