@@ -5,7 +5,6 @@ Rails.application.routes.draw do
         member do
           delete :delete
         end
-
         collection do
           get :user_cars
         end
