@@ -1,5 +1,3 @@
 class Api::V1::AuthenticationController < ApplicationController
-  def login
-    
-  end
+  def login; end
 end

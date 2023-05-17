@@ -7,14 +7,9 @@ Rails.application.routes.draw do
       resources :reservations, only: [:index, :create, :destroy, :show]
     end
   end
-end
- 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-
-  #cars end point
+  #Car resource  endpoint
   namespace :api do
     namespace :v1 do
       resources :cars do
@@ -24,5 +19,3 @@ end
     end
   end
 end
-
-# post 'login', to: 'authentication#login'
