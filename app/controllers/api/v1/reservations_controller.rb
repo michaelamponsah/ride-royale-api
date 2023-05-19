@@ -1,4 +1,5 @@
 class Api::V1::ReservationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_reservation, only: %i[show destroy]
 
   def show
@@ -41,5 +42,14 @@ class Api::V1::ReservationsController < ApplicationController
 
   def set_reservation
     @reservation = Reservation.find(params[:id])
+  end
+
+  def authenticate_user!
+    return if user_signed_in?
+
+    render json: {
+      code: 401,
+      message: 'Unauthorized access'
+    }, status: :unauthorized
   end
 end

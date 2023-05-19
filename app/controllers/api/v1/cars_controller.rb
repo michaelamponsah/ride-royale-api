@@ -1,4 +1,6 @@
 class Api::V1::CarsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     render json: { cars: Car.all }, status: :ok
   end
@@ -35,5 +37,14 @@ class Api::V1::CarsController < ApplicationController
 
   def car_params
     params.require(:car).permit(:user_id, :model, :make, :picture, :price)
+  end
+
+  def authenticate_user!
+    return if user_signed_in?
+
+    render json: {
+      code: 401,
+      message: 'Unauthorized access'
+    }, status: :unauthorized
   end
 end

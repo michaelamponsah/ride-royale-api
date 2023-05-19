@@ -10,7 +10,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
   username: "postgres"
-  password: "bernabas"
+  password: "admin123"
 
 development:
   <<: *default
@@ -29,4 +29,4 @@ production:
   <<: *default
   database: ride-royal-app_production
   username: "postgres"
-  password: "bernabas"
+  password: "admin123"
