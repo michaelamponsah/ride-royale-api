@@ -18,7 +18,8 @@ describe 'Reservations API' do
         run_test!
       end
     end
-
+  end
+  path '/api/v1/users/:user_id/reservations' do
     post 'Creates a new reservation for a user' do
       tags 'Reservations'
       consumes 'application/json'
