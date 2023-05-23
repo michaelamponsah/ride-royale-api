@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount Rswag::Api::Engine => '/api-docs'
 
    #Redirect to api-docs
-  #  get '*path', to: redirect('/api-docs')
+  get '*path', to: redirect('/api-docs')
   devise_for :users, defaults: { format: :json }, controllers: { sessions: 'api/v1/sessions' }
 
   namespace :api do
