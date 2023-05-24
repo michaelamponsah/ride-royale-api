@@ -1,0 +1,126 @@
+---
+openapi: 3.0.1
+info:
+  title: RIDE ROYALE API Documentation
+  version: v1
+paths:
+  "/api/v1/cars":
+    get:
+      summary: list cars
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create car
+      responses:
+        '200':
+          description: successful
+  "/api/v1/cars/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show car
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete car
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/:user_id/reservations":
+    get:
+      summary: Gets a list of reservations for a user
+      tags:
+      - Reservations
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: reservations found
+        '404':
+          description: user not found
+    post:
+      summary: Creates a new reservation for a user
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '201':
+          description: reservation created
+        '400':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                room_id:
+                  type: integer
+                start_date:
+                  type: date
+                end_date:
+                  type: date
+              required:
+              - room_id
+              - start_date
+              - end_date
+  "/api/v1/users/sign_in":
+    get:
+      summary: Gets a new session form
+      tags:
+      - Sessions
+      responses:
+        '200':
+          description: session form found
+    post:
+      summary: Creates a new session
+      tags:
+      - Sessions
+      parameters: []
+      responses:
+        '201':
+          description: session created
+        '401':
+          description: invalid credentials
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+              - username
+  "/api/v1/users/sign_out":
+    delete:
+      summary: Signs out the current user
+      tags:
+      - Sessions
+      responses:
+        '200':
+          description: user signed out
+        '401':
+          description: not logged in
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
