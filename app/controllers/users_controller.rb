@@ -1,4 +1,4 @@
-class  Api::V1::UsersController < ApplicationController  
+class UsersController < ApplicationController  
   def register
     if User.find_by(username: params[:username].downcase)
       render json: { error: 'Username already exists! please choose another one.' }, status: :not_acceptable

@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   # get '*path', to: redirect('/api-docs')
 
   # Login and register paths
-  # post 'register/:username/:email', to: 'users#register'
-  # get 'login/:username', to: 'users#login'
+  # post 'api/v1/register/:username/:email', to: 'users#register'
+  # get 'api/v1/login/:username', to: 'users#login'
+  post 'register/:username/:email', to: 'users#register'
+  get 'login/:username', to: 'users#login'
 
   # post '/users/register', to: 'users#register'
   # post '/users/login', to: 'users#login'
@@ -24,10 +26,6 @@ Rails.application.routes.draw do
         end
       end
       resources :users, only: [:index, :create] do
-        collection do
-          post 'register'
-          post 'login'
-        end
         resources :reservations, only: [:index, :create, :destroy, :show]
       end
     end
