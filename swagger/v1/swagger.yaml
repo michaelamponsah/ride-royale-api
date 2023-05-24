@@ -1,7 +1,7 @@
 ---
 openapi: 3.0.1
 info:
-  title: Luxy Rides API Documentation
+  title: RIDE ROYALE API Documentation
   version: v1
 paths:
   "/api/v1/cars":
