@@ -3,16 +3,12 @@ Rails.application.routes.draw do
   mount Rswag::Api::Engine => '/api-docs'
 
    #Redirect to api-docs
-  # get '*path', to: redirect('/api-docs')
+  get '*path', to: redirect('/api-docs')
 
   # Login and register paths
-  # post 'api/v1/register/:username/:email', to: 'users#register'
-  # get 'api/v1/login/:username', to: 'users#login'
   post 'register/:username/:email', to: 'users#register'
   get 'login/:username', to: 'users#login'
 
-  # post '/users/register', to: 'users#register'
-  # post '/users/login', to: 'users#login'
 
   namespace :api do
     namespace :v1 do
