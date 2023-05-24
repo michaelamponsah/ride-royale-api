@@ -75,50 +75,44 @@ paths:
               - room_id
               - start_date
               - end_date
-  "/api/v1/users/sign_in":
-    get:
-      summary: Gets a new session form
-      tags:
-      - Sessions
-      responses:
-        '200':
-          description: session form found
+  "/register/{username}/{email}":
+    parameters:
+    - name: username
+      in: path
+      description: username
+      required: true
+      schema:
+        type: string
+    - name: name
+      in: path
+      description: name
+      required: true
+      schema:
+        type: string
+    - name: email
+      in: path
+      description: email
+      required: true
+      schema:
+        type: string
     post:
-      summary: Creates a new session
-      tags:
-      - Sessions
-      parameters: []
-      responses:
-        '201':
-          description: session created
-        '401':
-          description: invalid credentials
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                username:
-                  type: string
-                email:
-                  type: string
-                password:
-                  type: string
-              required:
-              - email
-              - password
-              - username
-  "/api/v1/users/sign_out":
-    delete:
-      summary: Signs out the current user
-      tags:
-      - Sessions
+      summary: register user
       responses:
         '200':
-          description: user signed out
-        '401':
-          description: not logged in
+          description: successful
+  "/login/{username}":
+    parameters:
+    - name: username
+      in: path
+      description: username
+      required: true
+      schema:
+        type: string
+    get:
+      summary: login user
+      responses:
+        '200':
+          description: successful
 servers:
 - url: https://{defaultHost}
   variables:
