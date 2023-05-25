@@ -20,9 +20,7 @@ Main features of this website are:
 
 ## Project Documentation 📄
 
-- Live demo [link]()👈
-- API deployment [link]()👈
-- Front-end GitHub repository [link]()👈
+- Front-end GitHub repository [link](https://github.com/bernabasy/ride-royale-front-end)👈
 
 ## Kanban Board
 
