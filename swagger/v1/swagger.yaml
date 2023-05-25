@@ -1,0 +1,120 @@
+---
+openapi: 3.0.1
+info:
+  title: Ride Royale API Documentation
+  version: v1
+paths:
+  "/api/v1/cars":
+    get:
+      summary: list cars
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create car
+      responses:
+        '200':
+          description: successful
+  "/api/v1/cars/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show car
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete car
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/:user_id/reservations":
+    get:
+      summary: Gets a list of reservations for a user
+      tags:
+      - Reservations
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: reservations found
+        '404':
+          description: user not found
+    post:
+      summary: Creates a new reservation for a user
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '201':
+          description: reservation created
+        '400':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                room_id:
+                  type: integer
+                start_date:
+                  type: date
+                end_date:
+                  type: date
+              required:
+              - room_id
+              - start_date
+              - end_date
+  "/register/{username}/{email}":
+    parameters:
+    - name: username
+      in: path
+      description: username
+      required: true
+      schema:
+        type: string
+    - name: name
+      in: path
+      description: name
+      required: true
+      schema:
+        type: string
+    - name: email
+      in: path
+      description: email
+      required: true
+      schema:
+        type: string
+    post:
+      summary: register user
+      responses:
+        '200':
+          description: successful
+  "/login/{username}":
+    parameters:
+    - name: username
+      in: path
+      description: username
+      required: true
+      schema:
+        type: string
+    get:
+      summary: login user
+      responses:
+        '200':
+          description: successful
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
