@@ -29,6 +29,9 @@ Main features of this website are:
 ### Initial state of the Kanban Board:
 ![image](https://github.com/bernabasy/Ride-Royale-front-end/assets/104406349/7c7b94fd-3fd0-48df-a4c7-432f6879072a)
 
+### Final state of the Kanban Board:
+![ride-royal-api-kanban](https://github.com/michaelamponsah/ride-royale-api/assets/42746317/b986b83e-9b75-4cfd-af32-69e550a49e7c)
+
 ### Team members: 3 (Bernabas yosef, Michael Amponsah, Saeqa Sultani)
  
 ## Built With 🛠️
