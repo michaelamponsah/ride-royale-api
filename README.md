@@ -130,6 +130,10 @@ $ rspec
 - Twitter: [SaeqaSultani](https://twitter.com/SaeqaSultani)
 - LinkedIn: [SaeqaSultani](https://www.linkedin.com/in/saeqa-sultani)
 
+## 🚀 Future Features
+ - We'd implement a robust Role Based Access Control feature.
+ - We'd integrate a rating feature to allow users give ratings to cars booked.
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
