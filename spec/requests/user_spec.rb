@@ -26,7 +26,6 @@ RSpec.describe 'users', type: :request do
     end
   end
 
-
   path '/login/{username}' do
     # You'll want to customize the parameter types...
     parameter name: 'username', in: :path, type: :string, description: 'username'
