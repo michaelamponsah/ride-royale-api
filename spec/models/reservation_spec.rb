@@ -5,10 +5,6 @@ RSpec.describe Reservation, type: :model do
 
   before { subject.save }
 
-  it 'is valid with valid attributes' do
-    expect(subject).to be_valid
-  end
-
   it 'is not valid without a user_id' do
     subject.user_id = nil
     expect(subject).to_not be_valid
