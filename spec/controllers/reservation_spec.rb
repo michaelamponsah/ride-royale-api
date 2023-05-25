@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::ReservationsController, type: :controller do
   before :all do
-    @user = User.create(username: 'test')
+    @user = User.create(username: 'test', email: 'test@example.com')
     @car = Car.create(id: 1, model: 'BMW', picture: 'picture link', price: 250, user_id: @user.id)
   end
 

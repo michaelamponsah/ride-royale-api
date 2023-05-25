@@ -1,0 +1,9 @@
+cars /api/v1/cars/{id} get successful returns a 200 response
+cars /api/v1/cars/{id} delete successful returns a 200 response
+cars /api/v1/cars post successful returns a 200 response
+Reservations API /api/v1/users/:user_id/reservations get reservations found returns a 200 response
+Reservations API /api/v1/users/:user_id/reservations get user not found returns a 404 response
+Reservations API /api/v1/users/:user_id/reservations post reservation created returns a 201 response
+Reservations API /api/v1/users/:user_id/reservations post invalid request returns a 400 response
+users /register/{username}/{email} post successful returns a 200 response
+users /login/{username} get successful returns a 200 response

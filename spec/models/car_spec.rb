@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Car, type: :model do
   before(:each) do
-    @user = User.new(username: 'berna')
+    @user = User.new(username: 'berna', email: 'berna@example.com')
     @user.save
   end
 

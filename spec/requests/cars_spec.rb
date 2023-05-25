@@ -27,7 +27,7 @@ RSpec.describe 'cars', type: :request do
 
     get('show car') do
       response(200, 'successful') do
-        let(:id) { '123' }
+        let(:user_id) { '1' }
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -42,7 +42,7 @@ RSpec.describe 'cars', type: :request do
 
     delete('delete car') do
       response(200, 'successful') do
-        let(:id) { '123' }
+        let(:id) { '1' }
 
         after do |example|
           example.metadata[:response][:content] = {

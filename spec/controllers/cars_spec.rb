@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::CarsController, type: :controller do
   before :all do
-    @user = User.create(username: 'testing')
+    @user = User.create(username: 'testing', email: 'test@example.com')
     @car = Car.create(user_id: @user.id, make: 'nework', model: 'new', picture: 'new', price: 2000)
   end
 
